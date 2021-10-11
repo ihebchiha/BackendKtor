@@ -1,5 +1,7 @@
 package com.ihebchiha.plugins
 
+import com.ihebchiha.di.kodein
+import com.ihebchiha.service.UserService
 import io.ktor.routing.*
 import io.ktor.http.*
 import io.ktor.features.*
@@ -8,8 +10,11 @@ import io.ktor.http.content.*
 import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.request.*
+import org.kodein.di.instance
 
 fun Application.configureRouting() {
+    val userService by kodein.instance<UserService>()
+
     install(DoubleReceive)
     routing {
         get("/") {
