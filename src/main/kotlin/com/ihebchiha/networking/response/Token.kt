@@ -1,3 +1,5 @@
-package com.example.networking.response
+package com.ihebchiha.networking.response
 
-data class Token(val accessToken: String, val email: String, val date: String)
+import java.util.*
+
+data class Token(val accessToken: String, val email: String, val date: Date)
